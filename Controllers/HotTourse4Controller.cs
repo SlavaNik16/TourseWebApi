@@ -47,7 +47,7 @@ namespace TourseWebApi.Controllers
             Tours4List.Add(tours);
             return tours;
         }
-        [HttpPut]
+        [HttpPut("{id}")]
         public Tours4 UpdateTours([FromRoute] Guid id,[FromBody] AddTourse4RequestModel model)
         {
             var toursElement = Tours4List.FirstOrDefault(x => x.Id == id);
@@ -61,6 +61,7 @@ namespace TourseWebApi.Controllers
                 toursElement.Wi_Fi = model.Wi_Fi;
                 toursElement.Surcharges = model.Surcharges;
                 toursElement.TotalAmount = (model.NumberNight * model.NumberVac * model.CostVac) + model.Surcharges;
+
                 var index = Tours4List.IndexOf(toursElement);
                 Tours4List[index] = toursElement;
             }

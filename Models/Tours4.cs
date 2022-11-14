@@ -13,7 +13,7 @@
         /// <summary>
         /// Дату вылета
         /// </summary>
-        public DateTime DateDeparture { get; set; }
+        public DateTime DateDeparture { get; set;}
         /// <summary>
         /// Количество ночей
         /// </summary>
